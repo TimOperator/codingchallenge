@@ -53,7 +53,7 @@ class Solution {
             return;
         }
         
-        /*this.reverse(str, 0, len - 1);
+        this.reverse(str, 0, len - 1);
 
         int start = 0;
         int end = 0;
@@ -66,7 +66,21 @@ class Solution {
                 start = end + 1;
             }
         }
-        reverse(str, start, end - 2);*/
+        reverse(str, start, end - 2);
+    }
+    
+    /**
+     * Reverses the words in the given character array. Words are sequences of
+     * characters separated by spaces. The entire array is modified in place.
+     * Same as reverseWords but using a different algorithm.
+     *
+     * @param str the character array containing the words to reverse
+     */
+    public void reverseWordsCustom(char[] str) {
+        int len = str.length;
+        if (len == 0) {
+            return;
+        }
         
         // Reverse the entire string
         this.reverse(str, 0, len - 1);
@@ -99,6 +113,8 @@ class Solution {
                 break;
             }
         }
+        
+        // ToDo switch leading and trailing spaces, update jdoc
     }
 
     /**
@@ -114,7 +130,6 @@ class Solution {
             str[start++] = str[end];
             str[end--] = tmp;
         }
-        return;
     }
 
     /**
@@ -150,7 +165,7 @@ class Solution {
      * solution is found
      */
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>();
         int len = nums.length;
         if (len <= 0) {
             return null;

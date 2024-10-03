@@ -30,9 +30,33 @@ class SolutionTest {
     @Test
     void testReverseWords2() {
         // Case 2: Sentence with extra spaces
-        char[] input = "  hello world  ".toCharArray();
-        char[] expected = "world hello  ".toCharArray(); // Two spaces should remain at the end
+        char[] input = "hello world  ".toCharArray();
+        char[] expected = "  world hello".toCharArray(); // Two spaces should remain at the end
         solution.reverseWords(input);
+        assertArrayEquals(expected, input);
+    }
+    
+    /**
+     * Test the reverseWords function.
+     */
+    @Test
+    void testReverseWordsCustom1() {
+        // Case 1: Regular sentence with spaces
+        char[] input = "the sky is blue".toCharArray();
+        char[] expected = "blue is sky the".toCharArray();
+        solution.reverseWordsCustom(input);
+        assertArrayEquals(expected, input);
+    }
+    
+    /**
+     * Test the reverseWords function.
+     */
+    @Test
+    void testReverseWordsCustom2() {
+        // Case 2: Sentence with extra spaces
+        char[] input = "hello world  ".toCharArray();
+        char[] expected = "  world hello".toCharArray(); // Two spaces should remain at the end
+        solution.reverseWordsCustom(input);
         assertArrayEquals(expected, input);
     }
 
